@@ -1,0 +1,38 @@
+body {
+    background-image: url('../pics/backround1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#kontaktThasmi {
+    position: absolute;
+    top: 50%;
+    left: 37%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: white;
+    animation: appear 2s forwards;
+  }
+
+  #kontaktThalong {
+    position: absolute;
+    top: 50%;
+    left: 64%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: white;
+    animation: appear 2s forwards;
+  }
+
+  @keyframes appear {
+    0% {
+        opacity: 0;
+        top: 60%;
+    }
+
+    100% {
+        opacity: 1;
+        top: 50%;
+    }
+}
