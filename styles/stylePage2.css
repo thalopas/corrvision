@@ -1,53 +1,56 @@
 body {
-    background-image: url('../pics/backround1.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+  background-image: url('../pics/backround1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 #titleDatei {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 20px;
-    color: white;
-  }
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15px;
+  color: white;
+  text-align: center;
+}
 
-  #dateiUpload{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }  
+#dateiUpload {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
 
-  #uploadButton {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #f1f1f1;
-    border: none;
-    cursor: pointer;
-  }
+#uploadButton {
+  padding: 5px 10px;
+  font-size: 16px;
+  background-color: #f1f1f1;
+  border: none;
+  cursor: pointer;
+}
+
+#uploadButton:hover {
+  background-color: #ddd;
+}
+
+#linkButton {
+  position: absolute;
+  top: 50%;
+  left: 58%;
+  transform: translate(-50%, -50%);
   
-  #uploadButton:hover {
-    background-color: #ddd;
-  }
-  
-  #titleLink{
-    position: absolute;
-    top: 58%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 20px;
-    color: white;
-  }
+}
 
-  #linkButton{
-    position: absolute;
-    top: 68%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-
-  
+#sendButton {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#fileName {
+  color: white;
+  position: absolute;
+  top: 100%;
+  left: 1%;
+}
