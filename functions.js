@@ -14,7 +14,7 @@ document.getElementById('submitButton').addEventListener('click', function() {
 
   // JSON-Objekt erstellen
   var data = {
-    "apiToken": file,
+    file,
     "link": link
   };
 
@@ -22,7 +22,7 @@ document.getElementById('submitButton').addEventListener('click', function() {
   var jsonData = JSON.stringify(data);
 
   // URL, an die die JSON-Daten gesendet werden sollen
-  var url = 'localhost/api/dataset';
+  var url = location.host + '/api/dataset';
 
   // AJAX-Anfrage senden
   var xhr = new XMLHttpRequest();
@@ -40,7 +40,7 @@ document.getElementById('submitButton').addEventListener('click', function() {
       console.log("Datenset-ID: " + datasetID);
 
       // URL für die neue Anfrage zusammenstellen
-      var apiUrl = 'localhost/api/' + encodeURIComponent(datasetID) + '/heatmap';
+      var apiUrl = location.host + '/api/' + encodeURIComponent(datasetID) + '/heatmap';
 
       // Neue Anfrage mit der Datenset-ID in der URL senden
       var xhr2 = new XMLHttpRequest();
@@ -78,7 +78,7 @@ document.getElementById('submitButton').addEventListener('click', function() {
 
 document.getElementById('submitButton').addEventListener('click', function() {
   setTimeout(function() {
-    window.location.href = 'file:///C:/Users/thasm/Desktop/corrVision/corrVision/pages/page3.html';
+    window.location.href = 'pages/page3.html';
   }, 2000);
 });
 
