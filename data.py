@@ -38,11 +38,6 @@ class Data:
         dataset.dropna()
         # remove duplicate entries
         dataset.drop_duplicates()
-        # remove columns with excluesively unique values
-        dataset_length = len(dataset.index)
-        for column in dataset:
-            if dataset[column].nunique() == dataset_length:
-                dataset.drop(column, axis=1)
         return dataset
     
     def generate_heatmap(self, dataset_entry: dict):
