@@ -1,7 +1,7 @@
 import logging
 from logging.handlers import RotatingFileHandler
 from flask import Flask, url_for, request, send_file, json
-from lib.database import Dataset
+from database import Dataset
 
 
 app = Flask(__name__)
