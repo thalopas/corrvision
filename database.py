@@ -10,7 +10,7 @@ from data import Data
 
 from sqlalchemy.orm import DeclarativeBase, class_mapper, relationship, sessionmaker
 
-engine = create_engine("sqlite:////../corrvision")
+engine = create_engine("sqlite:///corrvision")
 
 Session = sessionmaker(bind=engine)
 session = Session()
