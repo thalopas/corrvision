@@ -1,3 +1,4 @@
+var host = '3.65.226.102:5000';
 
 document.getElementById('submitButton').addEventListener('click', function() {
   // Inhalte der hochgeladenen Datei und des Links abrufen
@@ -16,7 +17,7 @@ document.getElementById('submitButton').addEventListener('click', function() {
   console.log(jsonData);
 
   // URL, an die die JSON-Daten gesendet werden sollen
-  var url = 'localhost:5000/api/dataset';
+  var url = host + '/api/dataset';
 
   console.log(url);
 
@@ -36,7 +37,7 @@ document.getElementById('submitButton').addEventListener('click', function() {
       console.log("Datenset-ID: " + datasetID);
 
       // URL für die neue Anfrage zusammenstellen
-      var apiUrl = 'localhost:5000/api/' + encodeURIComponent(datasetID) + '/heatmap';
+      var apiUrl = host + '/api/' + encodeURIComponent(datasetID) + '/heatmap';
 
       // Neue Anfrage mit der Datenset-ID in der URL senden
       var xhr2 = new XMLHttpRequest();
