@@ -37,7 +37,7 @@ document.getElementById('submitButton').addEventListener('click', function() {
       console.log("Datenset-ID: " + datasetID);
 
       // URL für die neue Anfrage zusammenstellen
-      var apiUrl = host + '/api/' + encodeURIComponent(datasetID) + '/heatmap';
+      var apiUrl = host + '/api/dataset/' + encodeURIComponent(datasetID) + '/heatmap';
 
       // Neue Anfrage mit der Datenset-ID in der URL senden
       var xhr2 = new XMLHttpRequest();
