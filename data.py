@@ -9,9 +9,7 @@ from kaggle.api.kaggle_api_extended import KaggleApi
 
 
 class Data:
-    def __init__(self, username: str, key: str) -> None:
-        os.environ['KAGGLE_USERNAME'] = username
-        os.environ['KAGGLE_KEY'] = key
+    def __init__(self) -> None:
         try:
             self.api = KaggleApi()
             self.api.authenticate()

@@ -41,7 +41,7 @@ class Dataset(Base):
             session.add(new_dataset)
             session.commit()
             created_dataset = Dataset.get_dataset_by_name(content['datasetName'])
-            data = Data(username=content['username'], key=content['key'])
+            data = Data()
             data.get_dataset(created_dataset)
             return created_dataset['datasetId']
         except Exception as e:
