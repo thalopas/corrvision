@@ -37,13 +37,15 @@ class Dataset(Base):
     @staticmethod
     def create_dataset(content: dict, attributes = None):
         try:
-            new_dataset = Dataset(name = content['datasetName'], attributes = attributes)
-            session.add(new_dataset)
-            session.commit()
-            created_dataset = Dataset.get_dataset_by_name(content['datasetName'])
-            data = Data()
-            data.get_dataset(created_dataset)
-            return created_dataset['datasetId']
+            dataset = Dataset.get_dataset_by_name(content['datasetName'])
+            if not dataset:
+                new_dataset = Dataset(name = content['datasetName'], attributes = attributes)
+                session.add(new_dataset)
+                session.commit()
+                dataset = Dataset.get_dataset_by_name(content['datasetName'])
+                data = Data()
+                data.get_dataset(dataset)
+            return dataset['datasetId']
         except Exception as e:
             logging.error(f"Error while creating dataset; Exception: {e}")
             return None
