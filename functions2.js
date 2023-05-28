@@ -17,12 +17,12 @@ if (xhr.readyState === 4 && xhr.status === 200) {
     // Erfolgreiche Antwort verarbeiten
     var response = JSON.parse(xhr.responseText);
     console.log(response);
-    
+    var imgSrc = '../' + response.heatmap
     const image = document.createElement('img');
 
     // 👇️ Remote image
     image.setAttribute('id', 'imageElement')
-    image.setAttribute('src',response.heatmap);
+    image.setAttribute('src', imgSrc);
     image.setAttribute('alt', 'heatmap');
     document.getElementById('imageBox').appendChild(image);
 
