@@ -42,10 +42,12 @@ class Data:
             plt.figure(figsize=(12,12))
             plt.title("Pearson Correlation")
             heatmap = sns.heatmap(dataset.corr(), 
+                vmin=-1, 
+                vmax=1,
                 annot=True,
                 square=True,
                 linewidths=.5,
-                cmap='BrBG'
+                cmap='vlag'
                 )
             plt.savefig(f"{path}/heatmap.jpeg")
         except Exception as e:
