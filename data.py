@@ -24,23 +24,19 @@ class Data:
             for filename in os.listdir(path):
                 dataframes.append(pd.read_csv(f"{path}/{filename}"))
             dataset = pd.concat(dataframes)
-            dataset = Data.analyze_dataset(dataset)
+            logging.debug(dataset)
             self.generate_heatmap(dataset_entry=dataset_entry, dataset=dataset)
             return dataset
         except Exception as e:
             logging.error(f"Error while getting dataset; Exception: {e}")
             return pd.DataFrame()
     
-    @staticmethod
-    def analyze_dataset(dataset: pd.DataFrame):
-        # remove rows wit NaN values
-        dataset.dropna()
-        # remove duplicate entries
-        dataset.drop_duplicates()
-        return dataset
-    
     def generate_heatmap(self, dataset_entry: dict, dataset: pd.DataFrame):
         try:
+            # remove rows wit NaN values
+            dataset.dropna()
+            # remove duplicate entries
+            dataset.drop_duplicates()
             dataset = self.get_dataset(dataset_entry)
             plt.title("Pearson Correlation")
             sns.heatmap(dataset.corr(), 
