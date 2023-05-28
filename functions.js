@@ -6,7 +6,7 @@ document.getElementById('submitButton').addEventListener('click', function() {
 
   spinnerSpan.setAttribute('class', 'sr-only');
   spinner.setAttribute('id', 'spinner');
-  spinner.setAttribute('class', 'spinner-border text-success');
+  spinner.setAttribute('class', 'spinner-border text-light');
   spinner.setAttribute('role', 'status');
   document.getElementById('titleDatei').appendChild(spinner);
   document.getElementById('spinner').appendChild(spinnerSpan);
