@@ -25,26 +25,25 @@ class Data:
                 dataframes.append(pd.read_csv(f"{path}/{filename}"))
             dataset = pd.concat(dataframes)
             logging.debug(dataset)
-            self.generate_heatmap(dataset_entry=dataset_entry, dataset=dataset)
+            self.generate_heatmap(path=path, dataset=dataset)
             return dataset
         except Exception as e:
             logging.error(f"Error while getting dataset; Exception: {e}")
             return pd.DataFrame()
     
-    def generate_heatmap(self, dataset_entry: dict, dataset: pd.DataFrame):
+    def generate_heatmap(self, path: str, dataset: pd.DataFrame):
         try:
             # remove rows wit NaN values
             dataset.dropna()
             # remove duplicate entries
             dataset.drop_duplicates()
-            dataset = self.get_dataset(dataset_entry)
             plt.title("Pearson Correlation")
             heatmap = sns.heatmap(dataset.corr(), 
                 annot=True,
                 square=True,
                 linewidth=.5
                 )
-            plt.savefig(f"/tmp/{dataset_entry['name']}/heatmap.jpeg")
+            plt.savefig(f"{path}/heatmap.jpeg")
         except Exception as e:
             logging.error(f"Error while generating heatmap; Exception{e}")
         
