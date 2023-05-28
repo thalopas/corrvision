@@ -39,7 +39,7 @@ class Data:
             dataset = dataset.select_dtypes(['float64','int64'])
             # remove duplicate entries
             dataset = dataset.drop_duplicates()
-            plt.figure(figsize=(14,14))
+            plt.figure(figsize=(12,12))
             plt.title("Pearson Correlation")
             heatmap = sns.heatmap(dataset.corr(), 
                 annot=True,
