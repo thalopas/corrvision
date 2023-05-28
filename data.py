@@ -34,11 +34,11 @@ class Data:
     def generate_heatmap(self, path: str, dataset: pd.DataFrame):
         try:
             # remove rows wit NaN values
-            dataset.dropna()
+            dataset = dataset.dropna()
             # filter datatypes
-            dataset.select_dtypes(['float64','int64'])
+            dataset = dataset.select_dtypes(['float64','int64'])
             # remove duplicate entries
-            dataset.drop_duplicates()
+            dataset = dataset.drop_duplicates()
             plt.title("Pearson Correlation")
             heatmap = sns.heatmap(dataset.corr(), 
                 annot=True,
