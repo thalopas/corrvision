@@ -44,6 +44,7 @@ class Data:
             heatmap = sns.heatmap(dataset.corr(), 
                 vmin=-1, 
                 vmax=1,
+                center=0,
                 annot=True,
                 square=True,
                 linewidths=.5,
