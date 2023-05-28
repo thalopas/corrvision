@@ -20,7 +20,6 @@ if (xhr.readyState === 4 && xhr.status === 200) {
     var imgSrc = '../' + response.heatmap
     const image = document.createElement('img');
 
-    // 👇️ Remote image
     image.setAttribute('id', 'imageElement')
     image.setAttribute('src', imgSrc);
     image.setAttribute('alt', 'heatmap');

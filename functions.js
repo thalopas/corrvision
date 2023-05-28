@@ -1,6 +1,19 @@
 var host = 'http://3.65.226.102:5000';
 
 document.getElementById('submitButton').addEventListener('click', function() {
+  const spinner = document.createElement('div');
+  const spinnerSpan = document.createElement('span');
+
+  spinnerSpan.setAttribute('class', 'sr-only');
+  spinner.setAttribute('id', 'spinner');
+  spinner.setAttribute('class', 'spinner-border text-success');
+  spinner.setAttribute('role', 'status');
+  document.getElementById('titleDatei').appendChild(spinner);
+  document.getElementById('spinner').appendChild(spinnerSpan);
+
+
+
+  
   // Inhalte der hochgeladenen Datei und des Links abrufen
   //var file = document.getElementById('fileInput').files[0];
   var link = document.getElementById('linkInput').value;
