@@ -38,14 +38,13 @@ class Data:
             # remove duplicate entries
             dataset.drop_duplicates()
             dataset = self.get_dataset(dataset_entry)
-            plt.figure()
             plt.title("Pearson Correlation")
             heatmap = sns.heatmap(dataset.corr(), 
                 annot=True,
                 square=True,
                 linewidth=.5
                 )
-            plt.savefig(f"/tmp/{dataset_entry['path']}/heatmap.jpeg")
+            plt.savefig(f"/tmp/{dataset_entry['name']}/heatmap.jpeg")
         except Exception as e:
             logging.error(f"Error while generating heatmap; Exception{e}")
         
