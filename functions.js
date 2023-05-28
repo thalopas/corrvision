@@ -33,7 +33,7 @@ document.getElementById('submitButton').addEventListener('click', function() {
       console.log(response);
       
       // Datenset-ID aus der JSON-Datei auslesen
-      var datasetID = response.datasetID;
+      var datasetID = response.datasetId;
       console.log("Datenset-ID: " + datasetID);
 
       // URL für die neue Anfrage zusammenstellen
