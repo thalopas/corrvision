@@ -25,4 +25,4 @@ if (xhr.readyState === 4 && xhr.status === 200) {
 }
 };
 
-xhr.send(jsonData);
+xhr.send();
