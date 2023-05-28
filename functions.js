@@ -1,4 +1,4 @@
-var host = '3.65.226.102:5000';
+var host = 'http://3.65.226.102:5000';
 
 document.getElementById('submitButton').addEventListener('click', function() {
   // Inhalte der hochgeladenen Datei und des Links abrufen
@@ -17,7 +17,7 @@ document.getElementById('submitButton').addEventListener('click', function() {
   console.log(jsonData);
 
   // URL, an die die JSON-Daten gesendet werden sollen
-  var url = 'http://3.65.226.102:5000/api/dataset';
+  var url = host + '/api/dataset';
 
   console.log(url);
 
