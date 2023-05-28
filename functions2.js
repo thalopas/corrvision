@@ -1,5 +1,6 @@
 var host = 'http://3.65.226.102:5000';
-var datasetID = sessionStorage.getItem(datasetID);
+var datasetID = sessionStorage.getItem(datasetId);
+console.log(datasetID);
 
 
 // URL, an die die JSON-Daten gesendet werden sollen

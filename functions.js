@@ -34,7 +34,7 @@ document.getElementById('submitButton').addEventListener('click', function() {
       
       // Datenset-ID aus der JSON-Datei auslesen
       var datasetID = response.datasetId;
-      sessionStorage.setItem(datasetID,datasetID);
+      sessionStorage.setItem(datasetId,datasetID);
       console.log("Datenset-ID: " + sessionStorage.getItem(datasetID));
 
       // URL für die neue Anfrage zusammenstellen
