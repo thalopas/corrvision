@@ -17,13 +17,13 @@ document.getElementById('submitButton').addEventListener('click', function() {
   console.log(jsonData);
 
   // URL, an die die JSON-Daten gesendet werden sollen
-  var url = host + '/api/dataset';
+  var url = 'http://3.65.226.102:5000/api/dataset';
 
   console.log(url);
 
   // AJAX-Anfrage senden
   var xhr = new XMLHttpRequest();
-  xhr.open('POST', url, true);
+  xhr.open('POST', url);
   xhr.setRequestHeader('Content-Type', 'application/json');
 
   xhr.onreadystatechange = function() {
