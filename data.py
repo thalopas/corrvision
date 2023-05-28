@@ -39,12 +39,13 @@ class Data:
             dataset = dataset.select_dtypes(['float64','int64'])
             # remove duplicate entries
             dataset = dataset.drop_duplicates()
-            plt.figure(figsize=(16,16))
+            plt.figure(figsize=(14,14))
             plt.title("Pearson Correlation")
             heatmap = sns.heatmap(dataset.corr(), 
                 annot=True,
                 square=True,
-                linewidth=.5
+                linewidths=.5,
+                cmap='BrBG'
                 )
             plt.savefig(f"{path}/heatmap.jpeg")
         except Exception as e:
