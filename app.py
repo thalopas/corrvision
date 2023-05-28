@@ -1,6 +1,6 @@
 import logging
 from logging.handlers import RotatingFileHandler
-from flask import Flask, url_for, request, send_file, json
+from flask import Flask, request, json
 from flask_cors import CORS
 from database import Dataset
 
@@ -38,9 +38,15 @@ def create_dataset():
 @app.route("/api/dataset/<dataset_id>/heatmap")
 def send_heatmap(dataset_id):
     try:
-        dataset = Dataset.get_dataset_by_id(dataset_id)
-        path = f"/tmp/{dataset['name']}/heatmap.jpeg"
-        return send_file(path_or_file = path, mimetype = 'image/jpeg')
+        dataset_entry = Dataset.get_dataset_by_id(datasetId=dataset_id)
+        path = f"data/{dataset_entry['name']}/heatmap.jpeg"
+        response = {"heatmap": path}
+        response = app.response_class(
+            response = json.dumps(response),
+            status = 200,
+            mimetype = 'application/json'
+        )
+        return response
     except Exception as e:
         logging.error(f"Error while sending heatmap {e}")
         response = {"message": "Failed to send heatmap"}

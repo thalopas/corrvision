@@ -39,31 +39,6 @@ document.getElementById('submitButton').addEventListener('click', function() {
 
       // URL für die neue Anfrage zusammenstellen
       var apiUrl = host + '/api/dataset/' + encodeURIComponent(datasetID) + '/heatmap';
-
-      // Neue Anfrage mit der Datenset-ID in der URL senden
-      var xhr2 = new XMLHttpRequest();
-      xhr2.open('GET', apiUrl, true);
-      xhr2.responseType = 'blob'; // Die Antwort als Blob erhalten
-
-      xhr2.onreadystatechange = function() {
-        if (xhr2.readyState === 4 && xhr2.status === 200) {
-          // Erfolgreiche Antwort verarbeiten
-          var blobData = xhr2.response;
-          
-          // Das Blob-Objekt in eine URL konvertieren
-          var imageUrl = URL.createObjectURL(blobData);
-
-          // Das Bild darstellen oder weiterverarbeiten
-          // Bild in einem <img> -Element darstellen
-          var imgElement = document.getElementById('imageElement');
-          imgElement.src = imageUrl;
-        } else {
-          // Fehler oder andere Statuscodes behandeln
-          console.error(xhr2.statusText);
-        }
-      };
-
-      xhr2.send();
     } else {
       // Fehler oder andere Statuscodes behandeln
       console.error(xhr.statusText);

@@ -19,7 +19,7 @@ class Data:
     def get_dataset(self, dataset_entry: dict) -> pd.DataFrame:
         try:
             dataframes = []
-            path = f"/tmp/{dataset_entry['name']}"
+            path = f"data/{dataset_entry['name']}"
             self.api.dataset_download_files(dataset=dataset_entry['name'], path=path, unzip=True)
             for filename in os.listdir(path):
                 dataframes.append(pd.read_csv(f"{path}/{filename}"))
