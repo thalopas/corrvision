@@ -1,28 +1,24 @@
-document.getElementById('uploadButton').addEventListener('click', function () {
-  document.getElementById('fileInput').click();
-});
-
-document.getElementById('fileInput').addEventListener('change', function () {
-  var fileName = document.getElementById('fileInput').files[0].name;
-  document.getElementById('fileName').textContent = fileName;
-});
 
 document.getElementById('submitButton').addEventListener('click', function() {
   // Inhalte der hochgeladenen Datei und des Links abrufen
-  var file = document.getElementById('fileInput').files[0];
+  //var file = document.getElementById('fileInput').files[0];
   var link = document.getElementById('linkInput').value;
 
   // JSON-Objekt erstellen
   var data = {
-    file,
-    "link": link
+    "datasetName": link
   };
+  
 
   // JSON in einen String konvertieren
   var jsonData = JSON.stringify(data);
 
+  console.log(jsonData);
+
   // URL, an die die JSON-Daten gesendet werden sollen
-  var url = location.host + '/api/dataset';
+  var url = 'localhost:5000/api/dataset';
+
+  console.log(url);
 
   // AJAX-Anfrage senden
   var xhr = new XMLHttpRequest();
@@ -40,7 +36,7 @@ document.getElementById('submitButton').addEventListener('click', function() {
       console.log("Datenset-ID: " + datasetID);
 
       // URL für die neue Anfrage zusammenstellen
-      var apiUrl = location.host + '/api/' + encodeURIComponent(datasetID) + '/heatmap';
+      var apiUrl = 'localhost:5000/api/' + encodeURIComponent(datasetID) + '/heatmap';
 
       // Neue Anfrage mit der Datenset-ID in der URL senden
       var xhr2 = new XMLHttpRequest();
@@ -76,11 +72,11 @@ document.getElementById('submitButton').addEventListener('click', function() {
 });
 
 
-document.getElementById('submitButton').addEventListener('click', function() {
-  setTimeout(function() {
-    window.location.href = 'pages/page3.html';
-  }, 2000);
-});
+//document.getElementById('submitButton').addEventListener('click', function() {
+//  setTimeout(function() {
+//    window.location.href = 'pages/page3.html';
+//  }, 2000);
+//});
 
 
 

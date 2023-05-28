@@ -6,6 +6,10 @@ from database import Dataset
 
 app = Flask(__name__)
 
+@app.route("/test")
+def hello_world():
+    return "<p>Hello, World!</p>"
+
 @app.route("/api/dataset", methods=["POST"])
 def create_dataset():
     try:
