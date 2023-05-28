@@ -1,5 +1,5 @@
 var host = 'http://3.65.226.102:5000';
-var datasetID = sessionStorage.getItem(datasetId);
+var datasetID = sessionStorage.getItem('datasetID');
 console.log(datasetID);
 
 

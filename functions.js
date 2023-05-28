@@ -34,8 +34,8 @@ document.getElementById('submitButton').addEventListener('click', function() {
       
       // Datenset-ID aus der JSON-Datei auslesen
       var datasetID = response.datasetId;
-      sessionStorage.setItem(datasetId,datasetID);
-      console.log("Datenset-ID: " + sessionStorage.getItem(datasetId));
+      sessionStorage.setItem('datasetID',datasetID);
+      console.log("Datenset-ID: " + sessionStorage.getItem('datasetId'));
 
     } else {
       // Fehler oder andere Statuscodes behandeln
