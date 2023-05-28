@@ -1,5 +1,6 @@
 #imageBox {
     display: flex;
+    justify-content: center;
 }
 
 img {
