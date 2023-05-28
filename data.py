@@ -43,11 +43,11 @@ class Data:
         try:
             dataset = self.get_dataset(dataset_entry)
             plt.title("Pearson Correlation")
-            heatmap = sns.heatmap(dataset.corr(), 
-                    annot=True,
-                    square=True,
-                    linewidth=.5
-                    )
+            sns.heatmap(dataset.corr(), 
+                annot=True,
+                square=True,
+                linewidth=.5
+                )
             plt.savefig(f"/tmp/{dataset_entry['path']}/heatmap.jpeg")
         except Exception as e:
             logging.error(f"Error while generating heatmap; Exception{e}")
