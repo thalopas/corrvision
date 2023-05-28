@@ -35,6 +35,8 @@ class Data:
         try:
             # remove rows wit NaN values
             dataset.dropna()
+            # filter datatypes
+            dataset.select_dtypes(['float64','int64'])
             # remove duplicate entries
             dataset.drop_duplicates()
             plt.title("Pearson Correlation")
