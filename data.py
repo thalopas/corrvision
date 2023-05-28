@@ -25,7 +25,7 @@ class Data:
                 dataframes.append(pd.read_csv(f"{path}/{filename}"))
             dataset = pd.concat(dataframes)
             dataset = Data.analyze_dataset(dataset)
-            self.generate_heatmap(dataset_entry=dataset_entry)
+            self.generate_heatmap(dataset_entry=dataset_entry, dataset=dataset)
             return dataset
         except Exception as e:
             logging.error(f"Error while getting dataset; Exception: {e}")
@@ -39,7 +39,7 @@ class Data:
         dataset.drop_duplicates()
         return dataset
     
-    def generate_heatmap(self, dataset_entry: dict):
+    def generate_heatmap(self, dataset_entry: dict, dataset: pd.DataFrame):
         try:
             dataset = self.get_dataset(dataset_entry)
             plt.title("Pearson Correlation")
