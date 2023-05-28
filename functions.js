@@ -35,10 +35,8 @@ document.getElementById('submitButton').addEventListener('click', function() {
       // Datenset-ID aus der JSON-Datei auslesen
       var datasetID = response.datasetId;
       sessionStorage.setItem(datasetId,datasetID);
-      console.log("Datenset-ID: " + sessionStorage.getItem(datasetID));
+      console.log("Datenset-ID: " + sessionStorage.getItem(datasetId));
 
-      // URL für die neue Anfrage zusammenstellen
-      var apiUrl = host + '/api/dataset/' + encodeURIComponent(datasetID) + '/heatmap';
     } else {
       // Fehler oder andere Statuscodes behandeln
       console.error(xhr.statusText);
@@ -49,11 +47,11 @@ document.getElementById('submitButton').addEventListener('click', function() {
 });
 
 
-document.getElementById('submitButton').addEventListener('click', function() {
-  setTimeout(function() {
-    window.location.href = 'page3.html';
-  }, 2000);
-});
+//document.getElementById('submitButton').addEventListener('click', function() {
+//  setTimeout(function() {
+//    window.location.href = 'page3.html';
+//  }, 2000);
+//});
 
 
 
