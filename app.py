@@ -1,10 +1,12 @@
 import logging
 from logging.handlers import RotatingFileHandler
 from flask import Flask, url_for, request, send_file, json
+from flask_cors import CORS
 from database import Dataset
 
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/test")
 def hello_world():
