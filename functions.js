@@ -35,23 +35,18 @@ document.getElementById('submitButton').addEventListener('click', function() {
       // Datenset-ID aus der JSON-Datei auslesen
       var datasetID = response.datasetId;
       sessionStorage.setItem('datasetID',datasetID);
-      console.log("Datenset-ID: " + sessionStorage.getItem('datasetId'));
+      console.log("Datenset-ID: " + parseInt(sessionStorage.getItem('datasetId')));
 
     } else {
       // Fehler oder andere Statuscodes behandeln
       console.error(xhr.statusText);
     }
+    window.location.href = 'page3.html';
   };
 
   xhr.send(jsonData);
 });
 
-
-//document.getElementById('submitButton').addEventListener('click', function() {
-//  setTimeout(function() {
-//    window.location.href = 'page3.html';
-//  }, 2000);
-//});
 
 
 

@@ -18,7 +18,13 @@ if (xhr.readyState === 4 && xhr.status === 200) {
     var response = JSON.parse(xhr.responseText);
     console.log(response);
     
-    $("#imageElement").attr("src", response.heatmap);
+    const image = document.createElement('img');
+
+    // 👇️ Remote image
+    image.setAttribute('id', 'imageElement')
+    image.setAttribute('src',response.heatmap);
+    image.setAttribute('alt', 'heatmap');
+    document.getElementById('imageBox').appendChild(image);
 
 } else {
     // Fehler oder andere Statuscodes behandeln
