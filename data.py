@@ -22,7 +22,7 @@ class Data:
             path = f"/tmp/{dataset_entry['name']}"
             self.api.dataset_download_files(dataset=dataset_entry['name'], path=path, unzip=True)
             for filename in os.listdir(path):
-                dataframes.append(pd.read_csv(path + filename))
+                dataframes.append(pd.read_csv(f"{path}/{filename}"))
             dataset = pd.concat(dataframes)
             dataset = Data.analyze_dataset(dataset)
             return dataset
