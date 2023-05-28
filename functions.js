@@ -34,7 +34,8 @@ document.getElementById('submitButton').addEventListener('click', function() {
       
       // Datenset-ID aus der JSON-Datei auslesen
       var datasetID = response.datasetId;
-      console.log("Datenset-ID: " + datasetID);
+      sessionStorage.setItem(datasetID,datasetID);
+      console.log("Datenset-ID: " + sessionStorage.getItem(datasetID));
 
       // URL für die neue Anfrage zusammenstellen
       var apiUrl = host + '/api/dataset/' + encodeURIComponent(datasetID) + '/heatmap';

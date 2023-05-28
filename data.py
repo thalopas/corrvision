@@ -38,8 +38,9 @@ class Data:
             # remove duplicate entries
             dataset.drop_duplicates()
             dataset = self.get_dataset(dataset_entry)
+            plt.figure()
             plt.title("Pearson Correlation")
-            sns.heatmap(dataset.corr(), 
+            heatmap = sns.heatmap(dataset.corr(), 
                 annot=True,
                 square=True,
                 linewidth=.5
