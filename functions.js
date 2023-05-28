@@ -73,11 +73,11 @@ document.getElementById('submitButton').addEventListener('click', function() {
 });
 
 
-//document.getElementById('submitButton').addEventListener('click', function() {
-//  setTimeout(function() {
-//    window.location.href = 'pages/page3.html';
-//  }, 2000);
-//});
+document.getElementById('submitButton').addEventListener('click', function() {
+  setTimeout(function() {
+    window.location.href = 'pages/page3.html';
+  }, 2000);
+});
 
 
 
